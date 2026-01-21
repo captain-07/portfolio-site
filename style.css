@@ -8,14 +8,17 @@
 body {
   background: #e7dfd8;
   color: #111;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 /* NAV */
 .nav {
   display: flex;
   justify-content: space-between;
-  padding: 20px 10%;
-  background: #fff;
+  padding-top: 50px;
+  padding-left: 10%;
+  padding-right: 10%;
   border-bottom: 1px solid #ddd;
 }
 
@@ -23,7 +26,7 @@ body {
   margin-left: 20px;
   text-decoration: none;
   color: #111;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* SECTIONS */
@@ -70,9 +73,9 @@ body {
 }
 
 .btn.outline {
-  background: transparent;
+  background: black;
   border: 1px solid #111;
-  color: #111;
+  color: #fff;
 }
 
 /* ABOUT */
@@ -100,7 +103,7 @@ body {
 
 .card {
   padding: 30px;
-  border: 1px solid;
+  border: 2px solid;
   border-radius: 12px;
 }
 
@@ -124,4 +127,18 @@ footer {
   padding: 20px;
   font-size: 14px;
   color: #555;
+}
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
 }
