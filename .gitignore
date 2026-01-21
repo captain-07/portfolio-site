@@ -1,0 +1,44 @@
+# ===============================
+# OS / Editor junk
+# ===============================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# ===============================
+# Node / Tailwind
+# ===============================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===============================
+# Tailwind / Build output
+# ===============================
+dist/
+build/
+.cache/
+.tmp/
+
+# ===============================
+# Environment variables
+# ===============================
+.env
+.env.local
+.env.production
+
+# ===============================
+# Logs
+# ===============================
+logs/
+*.log
+
+# ===============================
+# Optional: Generated CSS
+# (ignore ONLY if you rebuild it)
+# ===============================
+# assets/css/output.css
