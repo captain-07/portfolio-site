@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Debjyoti Saha — Backend-focused Computer Science undergraduate & Software Development Intern at FOSSEE Osdag (IIT Bombay) building APIs with Python, Django, and FastAPI.">
+  <meta name="description" content="Debjyoti Saha — Backend Developer specializing in scalable REST APIs, distributed systems, and database architecture with Python, Django, FastAPI, Celery, and PostgreSQL.">
   <title>Debjyoti Saha | Backend Developer Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,13 @@
       <header class="terminal-bar">
         <div class="window-controls" aria-hidden="true"><i></i><i></i><i></i></div>
         <p>deb@portfolio: ~</p>
-        <span class="terminal-status" aria-hidden="true">bash</span>
+        <div class="terminal-bar-actions">
+          <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch color theme" title="Toggle theme">
+            <span class="theme-toggle__icon" aria-hidden="true">☀️</span>
+            <span class="theme-toggle__label">theme: dark</span>
+          </button>
+          <span class="terminal-status" aria-hidden="true">bash</span>
+        </div>
       </header>
 
       <nav class="site-nav" aria-label="Portfolio sections">
@@ -28,8 +34,8 @@
           <span aria-hidden="true">menu</span>
         </button>
         <ul id="navLinks" class="nav-links">
-          <li><a href="#about">~/about</a></li>
           <li><a href="#experience">~/experience</a></li>
+          <li><a href="#about">~/about</a></li>
           <li><a href="#skills">~/skills</a></li>
           <li><a href="#projects">~/projects</a></li>
           <li><a href="#education">~/education</a></li>
@@ -43,8 +49,8 @@
           <div class="hero-output">
             <p class="output-label">identity</p>
             <h1 id="hero-title">Debjyoti Saha</h1>
-            <p class="hero-role">Backend-focused CS Undergraduate &amp; Software Development Intern @ FOSSEE Osdag (IIT Bombay)</p>
-            <p class="hero-summary">Computer Science undergraduate focused on backend development, with hands-on experience building and shipping REST APIs and backend systems using Django, Django REST Framework, and FastAPI. Interested in backend systems, databases, API design, and distributed/asynchronous processing.</p>
+            <p class="hero-role">Backend Developer</p>
+            <p class="hero-summary">Specialized in engineering robust REST APIs, asynchronous task pipelines, and scalable database architectures using Python, Django, FastAPI, Celery, and PostgreSQL. Focused on clean system design, concurrency, and production reliability.</p>
           </div>
           <div class="action-row" aria-label="Professional links">
             <a class="terminal-button" href="https://github.com/captain-07" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
@@ -52,23 +58,6 @@
             <a class="terminal-button terminal-button--solid" href="#contact">Contact <span aria-hidden="true">↓</span></a>
           </div>
           <p class="command command--idle"><span>deb@portfolio:~$</span><i class="cursor" aria-hidden="true"></i></p>
-        </section>
-
-        <section id="about" class="content-section" aria-labelledby="about-title">
-          <p class="command"><span>deb@portfolio:~$</span> cat about.txt</p>
-          <div class="section-heading">
-            <p class="output-label">about</p>
-            <h2 id="about-title">Built for the backend.</h2>
-          </div>
-          <div class="about-grid terminal-output">
-            <p>Computer Science undergraduate focused on backend development, with hands-on experience building and shipping REST APIs and backend systems using Django, Django REST Framework, and FastAPI. Currently interning with FOSSEE Osdag (IIT Bombay). Interested in backend systems, databases, API design, and distributed/asynchronous processing.</p>
-            <aside class="fact-list" aria-label="Education and focus areas">
-              <p><span>status:</span> Software Development Intern @ FOSSEE Osdag (IIT Bombay)</p>
-              <p><span>focus:</span> backend systems, databases &amp; API design</p>
-              <p><span>degree:</span> B.Tech, Computer Science &amp; Engineering</p>
-              <p><span>location:</span> Murshidabad, West Bengal, India</p>
-            </aside>
-          </div>
         </section>
 
         <section id="experience" class="content-section" aria-labelledby="experience-title">
@@ -93,6 +82,23 @@
           </div>
         </section>
 
+        <section id="about" class="content-section" aria-labelledby="about-title">
+          <p class="command"><span>deb@portfolio:~$</span> cat about.txt</p>
+          <div class="section-heading">
+            <p class="output-label">about</p>
+            <h2 id="about-title">Built for the backend.</h2>
+          </div>
+          <div class="about-grid terminal-output">
+            <p>Backend developer with hands-on experience building and shipping REST APIs and backend systems using Django, Django REST Framework, and FastAPI. Currently engineering open-source structural software at FOSSEE Osdag (IIT Bombay). Deeply interested in distributed architectures, database optimization, and high-throughput API design.</p>
+            <aside class="fact-list" aria-label="Education and focus areas">
+              <p><span>status:</span> Software Development Intern @ FOSSEE Osdag (IIT Bombay)</p>
+              <p><span>focus:</span> backend systems, databases &amp; API design</p>
+              <p><span>degree:</span> B.Tech, Computer Science &amp; Engineering</p>
+              <p><span>location:</span> Murshidabad, West Bengal, India</p>
+            </aside>
+          </div>
+        </section>
+
         <section id="skills" class="content-section" aria-labelledby="skills-title">
           <p class="command"><span>deb@portfolio:~$</span> skills --list</p>
           <div class="section-heading">
@@ -114,64 +120,78 @@
 
         <section id="projects" class="content-section" aria-labelledby="projects-title">
           <p class="command"><span>deb@portfolio:~$</span> ls -la ./projects</p>
-          <div class="section-heading">
-            <p class="output-label">selected work</p>
-            <h2 id="projects-title">Projects directory.</h2>
+          <div class="section-heading section-heading--with-controls">
+            <div>
+              <p class="output-label">selected work</p>
+              <h2 id="projects-title">Projects directory.</h2>
+            </div>
+            <div class="project-scroll-controls" aria-label="Project scroll controls">
+              <button id="projPrev" class="carousel-btn" type="button" aria-label="Previous project">← prev</button>
+              <span id="projCounter" class="carousel-counter" aria-live="polite">01 / 03</span>
+              <button id="projNext" class="carousel-btn" type="button" aria-label="Next project">next →</button>
+            </div>
           </div>
-          <div class="directory-list" aria-hidden="true">
-            <p>drwxr-xr-x&nbsp; deb&nbsp; dev&nbsp; <a href="#csehub">csehub/</a></p>
-            <p>drwxr-xr-x&nbsp; deb&nbsp; dev&nbsp; <a href="#webhook-delivery-platform">webhook-delivery-platform/</a></p>
-            <p>drwxr-xr-x&nbsp; deb&nbsp; dev&nbsp; <a href="#apadamitra">apadamitra-ai/</a></p>
+          <div class="directory-list" aria-label="Quick jump to project">
+            <p>drwxr-xr-x&nbsp; deb&nbsp; dev&nbsp; <a href="#csehub" data-project-idx="0">csehub/</a></p>
+            <p>drwxr-xr-x&nbsp; deb&nbsp; dev&nbsp; <a href="#webhook-delivery-platform" data-project-idx="1">webhook-delivery-platform/</a></p>
+            <p>drwxr-xr-x&nbsp; deb&nbsp; dev&nbsp; <a href="#apadamitra" data-project-idx="2">apadamitra-ai/</a></p>
           </div>
-          <div class="project-list">
-            <article id="csehub" class="project-card">
-              <div class="project-card__top">
-                <p class="project-path">./projects/csehub</p>
-                <div class="project-links">
-                  <a href="https://cse-hub-murex.vercel.app/" target="_blank" rel="noopener noreferrer">live ↗</a>
-                  <a href="https://github.com/captain-07/CSEHub" target="_blank" rel="noopener noreferrer">source ↗</a>
+          <div class="project-slider-wrapper">
+            <div class="project-list" id="projectList">
+              <article id="csehub" class="project-card" data-index="0">
+                <div class="project-card__top">
+                  <p class="project-path">./projects/csehub</p>
+                  <div class="project-links">
+                    <a href="https://cse-hub-murex.vercel.app/" target="_blank" rel="noopener noreferrer">live ↗</a>
+                    <a href="https://github.com/captain-07/CSEHub" target="_blank" rel="noopener noreferrer">source ↗</a>
+                  </div>
                 </div>
-              </div>
-              <h3>CSEHub</h3>
-              <p class="project-stack">Django · DRF · PostgreSQL · Pinecone · Gemini</p>
-              <ul>
-                <li>Architected 10 relational models across 4 modular Django apps, with drf-spectacular auto-generating Swagger/ReDoc documentation for all endpoints.</li>
-                <li>Built a full CRUD REST API for 3 resources (articles, categories, tags) using DRF ViewSets and router-based URL configuration, enforcing admin-only write access via custom permission classes and eliminating N+1 queries with select_related/prefetch_related across 4 related lookups per request.</li>
-                <li>Built a RAG-based Q&amp;A chatbot that answers user questions grounded in the platform's own articles, embedding and retrieving content via Pinecone and generating responses with the Gemini API.</li>
-              </ul>
-            </article>
+                <h3>CSEHub</h3>
+                <p class="project-stack">Django · DRF · PostgreSQL · Pinecone · Gemini</p>
+                <ul>
+                  <li>Architected 10 relational models across 4 modular Django apps, with drf-spectacular auto-generating Swagger/ReDoc documentation for all endpoints.</li>
+                  <li>Built a full CRUD REST API for 3 resources (articles, categories, tags) using DRF ViewSets and router-based URL configuration, enforcing admin-only write access via custom permission classes and eliminating N+1 queries with select_related/prefetch_related across 4 related lookups per request.</li>
+                  <li>Built a RAG-based Q&amp;A chatbot that answers user questions grounded in the platform's own articles, embedding and retrieving content via Pinecone and generating responses with the Gemini API.</li>
+                </ul>
+              </article>
 
-            <article id="webhook-delivery-platform" class="project-card">
-              <div class="project-card__top">
-                <p class="project-path">./projects/webhook-delivery-platform</p>
-                <div class="project-links">
-                  <a href="https://github.com/captain-07/Reliable-Webhook-Delivery-Platform" target="_blank" rel="noopener noreferrer">source ↗</a>
+              <article id="webhook-delivery-platform" class="project-card" data-index="1">
+                <div class="project-card__top">
+                  <p class="project-path">./projects/webhook-delivery-platform</p>
+                  <div class="project-links">
+                    <a href="https://github.com/captain-07/Reliable-Webhook-Delivery-Platform" target="_blank" rel="noopener noreferrer">source ↗</a>
+                  </div>
                 </div>
-              </div>
-              <h3>Webhook Delivery Platform</h3>
-              <p class="project-stack">FastAPI · Celery · Redis · PostgreSQL</p>
-              <ul>
-                <li>Built an async FastAPI backend (SQLAlchemy async + Alembic) for reliable webhook delivery, with subscription management and an event ingest/fan-out pipeline.</li>
-                <li>Implemented Celery-based fan-out delivery with automatic retry and exponential backoff, HMAC payload signing for authenticity verification, and a full delivery-logs audit trail.</li>
-                <li>Added Redis-backed rate limiting (slowapi), containerized the full stack with Docker Compose (including Flower for Celery task monitoring), and wrote targeted tests for signing and delivery idempotency logic.</li>
-              </ul>
-            </article>
+                <h3>Webhook Delivery Platform</h3>
+                <p class="project-stack">FastAPI · Celery · Redis · PostgreSQL</p>
+                <ul>
+                  <li>Built an async FastAPI backend (SQLAlchemy async + Alembic) for reliable webhook delivery, with subscription management and an event ingest/fan-out pipeline.</li>
+                  <li>Implemented Celery-based fan-out delivery with automatic retry and exponential backoff, HMAC payload signing for authenticity verification, and a full delivery-logs audit trail.</li>
+                  <li>Added Redis-backed rate limiting (slowapi), containerized the full stack with Docker Compose (including Flower for Celery task monitoring), and wrote targeted tests for signing and delivery idempotency logic.</li>
+                </ul>
+              </article>
 
-            <article id="apadamitra" class="project-card">
-              <div class="project-card__top">
-                <p class="project-path">./projects/apadamitra-ai</p>
-                <div class="project-links">
-                  <a href="https://github.com/captain-07/apada-mitra" target="_blank" rel="noopener noreferrer">source ↗</a>
+              <article id="apadamitra" class="project-card" data-index="2">
+                <div class="project-card__top">
+                  <p class="project-path">./projects/apadamitra-ai</p>
+                  <div class="project-links">
+                    <a href="https://github.com/captain-07/apada-mitra" target="_blank" rel="noopener noreferrer">source ↗</a>
+                  </div>
                 </div>
-              </div>
-              <h3>Apadamitra AI — Disaster Alert System</h3>
-              <p class="project-stack">FastAPI · WebSockets · Twilio</p>
-              <ul>
-                <li>Engineered 4 dedicated FastAPI route modules (SMS, voice, mitigation, prediction) plus a dedicated WebSocket endpoint for real-time voice-based disaster Q&amp;A.</li>
-                <li>Built a custom rate-limiting middleware enforcing 120 requests/minute per client with automatic memory cleanup, and centralized exception handling across HTTP, validation, and unhandled error cases.</li>
-                <li>Integrated 3 third-party APIs (Twilio, ElevenLabs, Gemini) for automated SMS, voice alerts, and multilingual message generation, as part of a 4-person hackathon team (BugBusterz).</li>
-              </ul>
-            </article>
+                <h3>Apadamitra AI — Disaster Alert System</h3>
+                <p class="project-stack">FastAPI · WebSockets · Twilio</p>
+                <ul>
+                  <li>Engineered 4 dedicated FastAPI route modules (SMS, voice, mitigation, prediction) plus a dedicated WebSocket endpoint for real-time voice-based disaster Q&amp;A.</li>
+                  <li>Built a custom rate-limiting middleware enforcing 120 requests/minute per client with automatic memory cleanup, and centralized exception handling across HTTP, validation, and unhandled error cases.</li>
+                  <li>Integrated 3 third-party APIs (Twilio, ElevenLabs, Gemini) for automated SMS, voice alerts, and multilingual message generation, as part of a 4-person hackathon team (BugBusterz).</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+          <div class="project-indicators" id="projectIndicators" aria-label="Projects pagination">
+            <button class="indicator-dot is-active" data-index="0" aria-label="Go to project 1: CSEHub"></button>
+            <button class="indicator-dot" data-index="1" aria-label="Go to project 2: Webhook Delivery Platform"></button>
+            <button class="indicator-dot" data-index="2" aria-label="Go to project 3: Apadamitra AI"></button>
           </div>
         </section>
 
