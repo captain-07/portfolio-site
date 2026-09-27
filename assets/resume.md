@@ -95,7 +95,7 @@
 \section{Summary}
 
 \small{
-Computer Science undergraduate focused on backend development with hands-on experience building REST APIs using Python frameworks including Django, Django REST Framework, and FastAPI. Interested in backend systems, databases, API development, and software engineering practices.
+Computer Science undergraduate focused on backend development, with hands-on experience building and shipping REST APIs and backend systems using Django, Django REST Framework, and FastAPI. Currently interning with FOSSEE Osdag (IIT Bombay). Interested in backend systems, databases, API design, and distributed/asynchronous processing.
 }
 
 
@@ -107,15 +107,34 @@ Computer Science undergraduate focused on backend development with hands-on expe
 \begin{itemize}[leftmargin=0.15in,label={}]
 \small{\item{
 \textbf{Languages:} Python, SQL \\
-\textbf{Backend:} Django, Django REST Framework, FastAPI, REST APIs \\
-\textbf{Authentication:} JWT Authentication, Supabase Auth, Role-Based Access Control, CORS \\
+\textbf{Backend:} Django, Django REST Framework, FastAPI, REST APIs, WebSockets \\
+\textbf{Async \& Task Processing:} Celery, Redis, SQLAlchemy (async), Alembic \\
+\textbf{AI/Search:} Pinecone, Retrieval-Augmented Generation (RAG), Google Gemini API \\
+\textbf{Authentication:} JWT Authentication, Supabase Auth, Role-Based Access Control, CORS, HMAC Signing \\
 \textbf{Databases:} PostgreSQL, SQLite, Supabase, Database Design \\
-\textbf{DevOps \& Testing:} Docker, GitHub Actions (CI/CD), Pytest \\
-\textbf{API \& Integration:} Twilio, ElevenLabs, Google Gemini API, Cloudinary, OpenAPI/Swagger \\
-\textbf{Tools \& IDEs:} Git, GitHub, Linux, Postman, VS Code, Cursor, Render, Vercel
+\textbf{DevOps \& Testing:} Docker, Docker Compose, GitHub Actions (CI/CD), Pytest \\
+\textbf{API \& Integration:} Twilio, ElevenLabs, Cloudinary, OpenAPI/Swagger \\
+\textbf{Tools:} Git, GitHub, Linux, Postman, VS Code, Cursor, Render, Vercel
 }}
 \end{itemize}
 
+
+
+%-----------EXPERIENCE-----------
+
+\section{Experience}
+
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{FOSSEE Osdag -- IIT Bombay}{Remote}
+{Software Development Intern}{Sep 2026 -- Present}
+
+\resumeItemListStart
+\resumeItem{Selected as a Software Development Intern for Osdag, an open-source structural engineering design software project under FOSSEE (IIT Bombay), after a screening round that involved implementing a secure authentication system with Django and JWT.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
 
 
 
@@ -124,6 +143,36 @@ Computer Science undergraduate focused on backend development with hands-on expe
 \section{Projects}
 
 \resumeSubHeadingListStart
+
+
+\resumeProjectHeading
+{\textbf{CSEHub} $|$ \emph{Django, DRF, PostgreSQL, Pinecone, Gemini} $|$ \href{https://cse-hub-murex.vercel.app/}{\underline{Live}} $\cdot$ \href{https://github.com/captain-07/CSEHub}{\underline{GitHub}}}
+{}
+
+\resumeItemListStart
+
+\resumeItem{Architected 10 relational models across 4 modular Django apps, with drf-spectacular auto-generating Swagger/ReDoc documentation for all endpoints.}
+
+\resumeItem{Built a full CRUD REST API for 3 resources (articles, categories, tags) using DRF ViewSets and router-based URL configuration, enforcing admin-only write access via custom permission classes and eliminating N+1 queries with select\_related/prefetch\_related across 4 related lookups per request.}
+
+\resumeItem{Built a RAG-based Q\&A chatbot that answers user questions grounded in the platform's own articles, embedding and retrieving content via Pinecone and generating responses with the Gemini API.}
+
+\resumeItemListEnd
+
+
+\resumeProjectHeading
+{\textbf{Webhook Delivery Platform} $|$ \emph{FastAPI, Celery, Redis, PostgreSQL} $|$ \href{https://github.com/captain-07/Reliable-Webhook-Delivery-Platform}{\underline{GitHub}}}
+{}
+
+\resumeItemListStart
+
+\resumeItem{Built an async FastAPI backend (SQLAlchemy async + Alembic) for reliable webhook delivery, with subscription management and an event ingest/fan-out pipeline.}
+
+\resumeItem{Implemented Celery-based fan-out delivery with automatic retry and exponential backoff, HMAC payload signing for authenticity verification, and a full delivery-logs audit trail.}
+
+\resumeItem{Added Redis-backed rate limiting (slowapi), containerized the full stack with Docker Compose (including Flower for Celery task monitoring), and wrote targeted tests for signing and delivery idempotency logic.}
+
+\resumeItemListEnd
 
 
 \resumeProjectHeading
@@ -136,38 +185,7 @@ Computer Science undergraduate focused on backend development with hands-on expe
 
 \resumeItem{Built a custom rate-limiting middleware enforcing 120 requests/minute per client with automatic memory cleanup, and centralized exception handling across HTTP, validation, and unhandled error cases.}
 
-\resumeItem{Integrated 3 third-party APIs (Twilio, ElevenLabs, Gemini) for automated SMS, voice alerts, and multilingual message generation.}
-
-\resumeItem{Collaborated in a 4-person team (BugBusterz) on a hackathon project, contributing to backend development and testing.}
-
-\resumeItemListEnd
-
-
-\resumeProjectHeading
-{\textbf{CSEHub} $|$ \emph{Django, Django REST Framework, PostgreSQL} $|$ \href{https://github.com/captain-07/CSEHub}{\underline{GitHub}}}
-{}
-
-\resumeItemListStart
-
-\resumeItem{Architected 10 relational models across 4 modular Django apps, with drf-spectacular auto-generating Swagger/ReDoc documentation for all endpoints.}
-
-\resumeItem{Built a full CRUD REST API for 3 resources (articles, categories, tags) using DRF ViewSets and router-based URL configuration, enforcing admin-only write access via custom permission classes.}
-
-\resumeItem{Eliminated N+1 queries on article list/detail endpoints by applying select\_related and prefetch\_related across 4 related lookups (author, category, tags, code snippets) per request.}
-
-\resumeItemListEnd
-
-
-\resumeProjectHeading
-{\textbf{Dev Blogs} $|$ \emph{Django REST Framework, PostgreSQL, JWT} $|$ \href{https://github.com/captain-07/Dev-Blogs}{\underline{GitHub}}}
-{}
-
-\resumeItemListStart
-
-\resumeItem{Designed 3 relational models (Post, Comment, Like) with JWT-based authentication (60-minute access / 7-day refresh tokens) via SimpleJWT.}
-\resumeItem{Implemented configurable pagination (default 10 items/page, up to 100 via query param) to control payload size on list endpoints, alongside Swagger/ReDoc API documentation.}
-
-\resumeItem{Deployed the application with environment-based configuration and CORS setup.}
+\resumeItem{Integrated 3 third-party APIs (Twilio, ElevenLabs, Gemini) for automated SMS, voice alerts, and multilingual message generation, as part of a 4-person hackathon team (BugBusterz).}
 
 \resumeItemListEnd
 
@@ -190,30 +208,6 @@ Computer Science undergraduate focused on backend development with hands-on expe
 \resumeItemListStart
 \resumeItem{Relevant Coursework: Data Structures \& Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Computer Networks}
 \resumeItemListEnd
-
-\resumeSubHeadingListEnd
-
-
-
-
-
-%-----------ACHIEVEMENTS-----------
-
-\section{Achievements \& Certifications}
-
-\resumeSubHeadingListStart
-
-\resumeSubheading
-{HackerRank Verified Certifications}
-{2026}
-{Problem Solving (Basic \& Intermediate), Python, SQL}
-{
-}
-\resumeSubheading
-{100 Days of Code: The Complete Python Pro Bootcamp}
-{2025}
-{Udemy -- Instructor: Dr. Angela Yu}
-{}
 
 \resumeSubHeadingListEnd
 
